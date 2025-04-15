@@ -1,0 +1,241 @@
+Project 4: OSS Process Scheduler Simulator
+Course: CS 4760 - Operating Systems  
+
+
+Description
+-----------
+This project simulates the process scheduling component of an operating system. It implements a multi-level feedback queue (MLFQ) scheduler that manages user processes using shared memory, message queues, and simulated system time. The 'oss' master process generates, schedules, and synchronizes with multiple 'user' processes to mimic process dispatching and execution in a real OS.
+
+Features
+--------
+- Multi-level feedback queue with 3 priority levels
+- Simulated logical clock (seconds + nanoseconds)
+- Shared memory for process control blocks (PCB)
+- Message queue-based inter-process communication
+- Random process generation and randomized user behavior:
+  - Full quantum usage
+  - Blocking on events
+  - Early termination
+- Logging of queue status, dispatch events, and process metrics
+
+File Structure
+--------------
+oss.c       : Master scheduler program that simulates the OS  
+user.c      : Simulated user processes launched by oss  
+queue.c/h   : Queue implementation and interface used by the MLFQ  
+makefile    : Compiles the code into oss and user executables  
+msglog.out  : Output log of simulation actions and results  
+.gitignore  : Hides compiled binaries and logs from version control
+
+Compilation & Execution
+-----------------------
+To Compile:
+    make clean  
+    make
+
+To Run:
+    ./oss -s <max_user_processes> -l <log_file> -t <max_runtime>
+
+Example:
+    ./oss -s 5 -l msglog.out -t 3
+
+Output
+------
+- The scheduler logs process creation, queue transitions, and quantum usage to msglog.out  
+- Every 0.5 simulated seconds, current process table and queue states are printed  
+- At termination, statistics such as average wait time, CPU utilization, and queue usages are output  
+
+Signal Handling
+---------------
+The project uses SIGINT to safely terminate the simulation and clean up all allocated IPC resources including:
+- Shared memory  
+- Message queues
+
+Stats Collected
+---------------
+- Average wait time per process  
+- Average blocked time  
+- CPU idle time  
+- Number of times each queue was used
+
+Makefile Info
+-------------
+- Contains suffix rules  
+- Targets:  
+  - make: builds oss and user  
+  - make clean: removes binaries and log files
+
+OUTPUT
+---------------
+./oss -s 5 -l msglog.out -t 3
+USER 1956077: Decision = full quantum, Time used = 10000000
+USER 1956078: Decision = block, Time used = 123253
+USER 1956079: Decision = block, Time used = 9329043
+USER 1956080: Decision = full quantum, Time used = 10000000
+USER 1956081: Decision = full quantum, Time used = 10000000
+USER 1956082: Decision = block, Time used = 9626332
+USER 1956083: Decision = block, Time used = 2811341
+USER 1956084: Decision = block, Time used = 4129752
+USER 1956085: Decision = full quantum, Time used = 10000000
+USER 1956086: Decision = full quantum, Time used = 4417313
+USER 1956087: Decision = full quantum, Time used = 1391732
+USER 1956088: Decision = full quantum, Time used = 10000000
+USER 1956089: Decision = block, Time used = 3615598
+USER 1956090: Decision = full quantum, Time used = 10000000
+USER 1956091: Decision = block, Time used = 6963754
+USER 1956092: Decision = full quantum, Time used = 10000000
+USER 1956093: Decision = block, Time used = 4303389
+USER 1956094: Decision = block, Time used = 5314954
+^COSS: SIGINT received, cleaning up...
+~/Project.4$ cat msglog.out
+OSS: Generating process with PID 1956077 and putting in queue 0 at time 0:0
+OSS: Dispatching PID 1956077 from queue 0 at time 0:9483
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 1:191254170
+Queue 0: EMPTY
+Queue 1: 0 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956078 and putting in queue 0 at time 1:191254170
+OSS: Dispatching PID 1956078 from queue 0 at time 1:191255156
+OSS: PID 123253 used full quantum, moving to queue 1
+OSS: Queue states at time 2:382499843
+Queue 0: EMPTY
+Queue 1: 0 1 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956079 and putting in queue 0 at time 2:382499843
+OSS: Dispatching PID 1956079 from queue 0 at time 2:382502720
+OSS: PID 9329043 used full quantum, moving to queue 1
+OSS: Queue states at time 3:573747407
+Queue 0: EMPTY
+Queue 1: 0 1 2 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956080 and putting in queue 0 at time 3:573747407
+OSS: Dispatching PID 1956080 from queue 0 at time 3:573754422
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 4:764999109
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956081 and putting in queue 0 at time 4:764999109
+OSS: Dispatching PID 1956081 from queue 0 at time 4:765007002
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 5:956251689
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956082 and putting in queue 0 at time 5:956251689
+OSS: Dispatching PID 1956082 from queue 0 at time 5:956260124
+OSS: PID -9626332 used full quantum, moving to queue 1
+OSS: Queue states at time 7:147504811
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956083 and putting in queue 0 at time 7:147504811
+OSS: Dispatching PID 1956083 from queue 0 at time 7:147510297
+OSS: PID -2811341 used full quantum, moving to queue 1
+OSS: Queue states at time 8:338754984
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956084 and putting in queue 0 at time 8:338754984
+OSS: Dispatching PID 1956084 from queue 0 at time 8:338755576
+OSS: PID 4129752 used full quantum, moving to queue 1
+OSS: Queue states at time 9:530000263
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956085 and putting in queue 0 at time 9:530000263
+OSS: Dispatching PID 1956085 from queue 0 at time 9:530007012
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 10:721251699
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956086 and putting in queue 0 at time 10:721251699
+OSS: Dispatching PID 1956086 from queue 0 at time 10:721253220
+OSS: PID 4417313 used full quantum, moving to queue 1
+OSS: Queue states at time 11:912497907
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956087 and putting in queue 0 at time 11:912497907
+OSS: Dispatching PID 1956087 from queue 0 at time 11:912500369
+OSS: PID 1391732 used full quantum, moving to queue 1
+OSS: Queue states at time 13:103745056
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956088 and putting in queue 0 at time 13:103745056
+OSS: Dispatching PID 1956088 from queue 0 at time 13:103745183
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 14:294989870
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956089 and putting in queue 0 at time 14:294989870
+OSS: Dispatching PID 1956089 from queue 0 at time 14:294998660
+OSS: PID 3615598 used full quantum, moving to queue 1
+OSS: Queue states at time 15:486243347
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956090 and putting in queue 0 at time 15:486243347
+OSS: Dispatching PID 1956090 from queue 0 at time 15:486243506
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 16:677488193
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956091 and putting in queue 0 at time 16:677488193
+OSS: Dispatching PID 1956091 from queue 0 at time 16:677496056
+OSS: PID -6963754 used full quantum, moving to queue 1
+OSS: Queue states at time 17:868740743
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956092 and putting in queue 0 at time 17:868740743
+OSS: Dispatching PID 1956092 from queue 0 at time 17:868744769
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 19:59989456
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956093 and putting in queue 0 at time 19:59989456
+OSS: Dispatching PID 1956093 from queue 0 at time 19:59990096
+OSS: PID 4303389 used full quantum, moving to queue 1
+OSS: Queue states at time 20:251234783
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Generating process with PID 1956094 and putting in queue 0 at time 20:251234783
+OSS: Dispatching PID 1956094 from queue 0 at time 20:251238309
+OSS: PID 5314954 used full quantum, moving to queue 1
+OSS: Queue states at time 21:442482996
+Queue 0: EMPTY
+Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 
+Queue 2: EMPTY
+Blocked Queue: EMPTY
+OSS: Dispatching PID 1956077 from queue 1 at time 21:442492268
+
+Notes
+-----
+- Keep log file under 10,000 lines to avoid runaway logging  
+- Ensure each simulation run starts with a fresh log  
+- Make sure .gitignore excludes oss, user, *.o, and msglog.out
