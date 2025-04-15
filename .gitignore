@@ -1,0 +1,4 @@
+*.o
+oss
+user
+msglog.out

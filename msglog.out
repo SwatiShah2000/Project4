@@ -1,145 +1,145 @@
-OSS: Generating process with PID 1762876 and putting in queue 0 at time 0:0
-OSS: Dispatching PID 1762876 from queue 0 at time 0:9483
-OSS: PID 1762876 used full quantum, moving to queue 1
-OSS: Queue states at time 1:735170192
+OSS: Generating process with PID 1956077 and putting in queue 0 at time 0:0
+OSS: Dispatching PID 1956077 from queue 0 at time 0:9483
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 1:191254170
 Queue 0: EMPTY
 Queue 1: 0 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762877 and putting in queue 0 at time 1:735170192
-OSS: Dispatching PID 1762877 from queue 0 at time 1:735171178
-OSS: PID 1762877 used full quantum, moving to queue 1
-OSS: Queue states at time 3:470331887
+OSS: Generating process with PID 1956078 and putting in queue 0 at time 1:191254170
+OSS: Dispatching PID 1956078 from queue 0 at time 1:191255156
+OSS: PID 123253 used full quantum, moving to queue 1
+OSS: Queue states at time 2:382499843
 Queue 0: EMPTY
 Queue 1: 0 1 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762878 and putting in queue 0 at time 3:470331887
-OSS: Dispatching PID 1762878 from queue 0 at time 3:470334764
-OSS: PID 1762878 used full quantum, moving to queue 1
-OSS: Queue states at time 5:205495473
+OSS: Generating process with PID 1956079 and putting in queue 0 at time 2:382499843
+OSS: Dispatching PID 1956079 from queue 0 at time 2:382502720
+OSS: PID 9329043 used full quantum, moving to queue 1
+OSS: Queue states at time 3:573747407
 Queue 0: EMPTY
 Queue 1: 0 1 2 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762879 and putting in queue 0 at time 5:205495473
-OSS: Dispatching PID 1762879 from queue 0 at time 5:205502488
-OSS: PID 1762879 used full quantum, moving to queue 1
-OSS: Queue states at time 6:940663197
+OSS: Generating process with PID 1956080 and putting in queue 0 at time 3:573747407
+OSS: Dispatching PID 1956080 from queue 0 at time 3:573754422
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 4:764999109
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762880 and putting in queue 0 at time 6:940663197
-OSS: Dispatching PID 1762880 from queue 0 at time 6:940671090
-OSS: PID 1762880 used full quantum, moving to queue 1
-OSS: Queue states at time 8:675831799
+OSS: Generating process with PID 1956081 and putting in queue 0 at time 4:764999109
+OSS: Dispatching PID 1956081 from queue 0 at time 4:765007002
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 5:956251689
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762881 and putting in queue 0 at time 8:675831799
-OSS: Dispatching PID 1762881 from queue 0 at time 8:675840234
-OSS: PID 1762881 used full quantum, moving to queue 1
-OSS: Queue states at time 10:411000943
+OSS: Generating process with PID 1956082 and putting in queue 0 at time 5:956251689
+OSS: Dispatching PID 1956082 from queue 0 at time 5:956260124
+OSS: PID -9626332 used full quantum, moving to queue 1
+OSS: Queue states at time 7:147504811
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762882 and putting in queue 0 at time 10:411000943
-OSS: Dispatching PID 1762882 from queue 0 at time 10:411006429
-OSS: PID 1762882 used full quantum, moving to queue 1
-OSS: Queue states at time 12:146167138
+OSS: Generating process with PID 1956083 and putting in queue 0 at time 7:147504811
+OSS: Dispatching PID 1956083 from queue 0 at time 7:147510297
+OSS: PID -2811341 used full quantum, moving to queue 1
+OSS: Queue states at time 8:338754984
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762883 and putting in queue 0 at time 12:146167138
-OSS: Dispatching PID 1762883 from queue 0 at time 12:146167730
-OSS: PID 1762883 used full quantum, moving to queue 1
-OSS: Queue states at time 13:881328439
+OSS: Generating process with PID 1956084 and putting in queue 0 at time 8:338754984
+OSS: Dispatching PID 1956084 from queue 0 at time 8:338755576
+OSS: PID 4129752 used full quantum, moving to queue 1
+OSS: Queue states at time 9:530000263
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762884 and putting in queue 0 at time 13:881328439
-OSS: Dispatching PID 1762884 from queue 0 at time 13:881335188
-OSS: PID 1762884 used full quantum, moving to queue 1
-OSS: Queue states at time 15:616495897
+OSS: Generating process with PID 1956085 and putting in queue 0 at time 9:530000263
+OSS: Dispatching PID 1956085 from queue 0 at time 9:530007012
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 10:721251699
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762885 and putting in queue 0 at time 15:616495897
-OSS: Dispatching PID 1762885 from queue 0 at time 15:616497418
-OSS: PID 1762885 used full quantum, moving to queue 1
-OSS: Queue states at time 17:351658127
+OSS: Generating process with PID 1956086 and putting in queue 0 at time 10:721251699
+OSS: Dispatching PID 1956086 from queue 0 at time 10:721253220
+OSS: PID 4417313 used full quantum, moving to queue 1
+OSS: Queue states at time 11:912497907
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762886 and putting in queue 0 at time 17:351658127
-OSS: Dispatching PID 1762886 from queue 0 at time 17:351660589
-OSS: PID 1762886 used full quantum, moving to queue 1
-OSS: Queue states at time 19:86821298
+OSS: Generating process with PID 1956087 and putting in queue 0 at time 11:912497907
+OSS: Dispatching PID 1956087 from queue 0 at time 11:912500369
+OSS: PID 1391732 used full quantum, moving to queue 1
+OSS: Queue states at time 13:103745056
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762887 and putting in queue 0 at time 19:86821298
-OSS: Dispatching PID 1762887 from queue 0 at time 19:86821425
-OSS: PID 1762887 used full quantum, moving to queue 1
-OSS: Queue states at time 20:821982134
+OSS: Generating process with PID 1956088 and putting in queue 0 at time 13:103745056
+OSS: Dispatching PID 1956088 from queue 0 at time 13:103745183
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 14:294989870
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762888 and putting in queue 0 at time 20:821982134
-OSS: Dispatching PID 1762888 from queue 0 at time 20:821990924
-OSS: PID 1762888 used full quantum, moving to queue 1
-OSS: Queue states at time 22:557151633
+OSS: Generating process with PID 1956089 and putting in queue 0 at time 14:294989870
+OSS: Dispatching PID 1956089 from queue 0 at time 14:294998660
+OSS: PID 3615598 used full quantum, moving to queue 1
+OSS: Queue states at time 15:486243347
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762889 and putting in queue 0 at time 22:557151633
-OSS: Dispatching PID 1762889 from queue 0 at time 22:557151792
-OSS: PID 1762889 used full quantum, moving to queue 1
-OSS: Queue states at time 24:292312501
+OSS: Generating process with PID 1956090 and putting in queue 0 at time 15:486243347
+OSS: Dispatching PID 1956090 from queue 0 at time 15:486243506
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 16:677488193
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762890 and putting in queue 0 at time 24:292312501
-OSS: Dispatching PID 1762890 from queue 0 at time 24:292320364
-OSS: PID 1762890 used full quantum, moving to queue 1
-OSS: Queue states at time 26:27481073
+OSS: Generating process with PID 1956091 and putting in queue 0 at time 16:677488193
+OSS: Dispatching PID 1956091 from queue 0 at time 16:677496056
+OSS: PID -6963754 used full quantum, moving to queue 1
+OSS: Queue states at time 17:868740743
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762891 and putting in queue 0 at time 26:27481073
-OSS: Dispatching PID 1762891 from queue 0 at time 26:27485099
-OSS: PID 1762891 used full quantum, moving to queue 1
-OSS: Queue states at time 27:762645808
+OSS: Generating process with PID 1956092 and putting in queue 0 at time 17:868740743
+OSS: Dispatching PID 1956092 from queue 0 at time 17:868744769
+OSS: PID 10000000 used full quantum, moving to queue 1
+OSS: Queue states at time 19:59989456
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762892 and putting in queue 0 at time 27:762645808
-OSS: Dispatching PID 1762892 from queue 0 at time 27:762646448
-OSS: PID 1762892 used full quantum, moving to queue 1
-OSS: Queue states at time 29:497807157
+OSS: Generating process with PID 1956093 and putting in queue 0 at time 19:59989456
+OSS: Dispatching PID 1956093 from queue 0 at time 19:59990096
+OSS: PID 4303389 used full quantum, moving to queue 1
+OSS: Queue states at time 20:251234783
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Generating process with PID 1762893 and putting in queue 0 at time 29:497807157
-OSS: Dispatching PID 1762893 from queue 0 at time 29:497810683
-OSS: PID 1762893 used full quantum, moving to queue 1
-OSS: Queue states at time 31:232971392
+OSS: Generating process with PID 1956094 and putting in queue 0 at time 20:251234783
+OSS: Dispatching PID 1956094 from queue 0 at time 20:251238309
+OSS: PID 5314954 used full quantum, moving to queue 1
+OSS: Queue states at time 21:442482996
 Queue 0: EMPTY
 Queue 1: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 
 Queue 2: EMPTY
 Blocked Queue: EMPTY
-OSS: Dispatching PID 1762876 from queue 1 at time 31:232980664
+OSS: Dispatching PID 1956077 from queue 1 at time 21:442492268

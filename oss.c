@@ -115,7 +115,7 @@ void forkUser(int index) {
 void unblockProcesses() {
     for (int i = 0; i < MAX_BLOCKED; i++) {
         int pid = blockedQueue.items[i];
-        if (pid == -1 || !pcbTable[pid].blocked) continue;
+        if (pid < 0 || pid >= MAX_PROCESSES || !pcbTable[pid].blocked) continue;
 
         if ((simClock->seconds > pcbTable[pid].unblockTime.seconds) ||
             (simClock->seconds == pcbTable[pid].unblockTime.seconds &&
@@ -123,7 +123,7 @@ void unblockProcesses() {
 
             pcbTable[pid].blocked = 0;
             enqueue(&queues[0], pid);
-            fprintf(logFile, "OSS: Unblocking process PID %d at time %u:%u, returning to queue 0\n",
+            fprintf(logFile, "OSS: PID %d unblocked and returned to queue 0 at %u:%u\n",
                     pcbTable[pid].pid, simClock->seconds, simClock->ns);
             dequeueSpecific(&blockedQueue, pid);
         }
@@ -153,11 +153,11 @@ void dispatchProcess(int index) {
     advanceClock(used);
 
     if (rcv.used_time < 0) {
-        fprintf(logFile, "OSS: PID %d terminated after %d ns\n", msg.pid, used);
+        fprintf(logFile, "OSS: PID %d terminated after %d ns\n", rcv.pid, used);
         pcbTable[index].occupied = 0;
         activeProcs--;
     } else if (used < quantum) {
-        fprintf(logFile, "OSS: PID %d blocked after %d ns, moving to blocked queue\n", msg.pid, used);
+        fprintf(logFile, "OSS: PID %d blocked after %d ns, moving to blocked queue\n", rcv.pid, used);
         pcbTable[index].blocked = 1;
         pcbTable[index].unblockTime.seconds = simClock->seconds + (rand() % 5);
         pcbTable[index].unblockTime.ns = simClock->ns + (rand() % 1000);
@@ -166,7 +166,7 @@ void dispatchProcess(int index) {
         pcbTable[index].queueLevel = (level < 2) ? level + 1 : 2;
         enqueue(&queues[pcbTable[index].queueLevel], index);
         fprintf(logFile, "OSS: PID %d used full quantum, moving to queue %d\n",
-                msg.pid, pcbTable[index].queueLevel);
+                rcv.pid, pcbTable[index].queueLevel);
     }
 
     pcbTable[index].cpuTime.ns += used;
