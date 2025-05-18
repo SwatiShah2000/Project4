@@ -1,0 +1,84 @@
+## Major Improvements
+
+1. **Complete Implementation of OSS.C**
+   - Implemented a fully functional scheduler based on the Multi-Level Feedback Queue (MLFQ) algorithm
+   - Added proper signal handling for both SIGINT and SIGALRM
+   - Implemented comprehensive resource management (shared memory, message queues)
+   - Added detailed logging of scheduler operations and queue transitions
+
+2. **Enhanced USER.C Implementation**
+   - Improved the user process behavior to properly simulate different execution patterns
+   - Fixed the naming conflict with the built-in 'index' function
+   - Implemented proper message-based communication with the scheduler
+   - Added random decision-making to simulate different process behaviors (termination, blocking, full quantum usage)
+
+3. **Robust Error Handling**
+   - Added comprehensive error checking for system calls
+   - Implemented proper cleanup procedures for all allocated resources
+   - Enhanced signal handling to ensure graceful termination
+
+4. **Resource Management Improvements**
+   - Added proper initialization of shared memory and message queues
+   - Implemented thorough cleanup procedures for all allocated resources
+   - Added better tracking of process states in the PCB table
+
+## Specific Technical Improvements
+
+1. **OSS.C Scheduler Logic**
+   - Implemented three priority queues with different time quanta
+   - Added process demotion logic based on quantum usage
+   - Implemented a boost mechanism for blocked processes
+   - Added dispatch overhead simulation to better model real-world behavior
+
+2. **Timer Implementation**
+   - Replaced basic integer timers with a struct-based approach for better precision
+   - Added proper handling of nanosecond overflow in the simulated clock
+   - Implemented more accurate process timing measurement
+
+3. **Command Line Argument Handling**
+   - Enhanced the parsing of command line arguments
+   - Added better validation of input parameters
+   - Implemented helpful usage messages for invalid inputs
+
+4. **Queue Management**
+   - Leveraged the existing queue implementation more effectively
+   - Added proper queue state logging for debugging and analysis
+   - Implemented queue statistics collection for performance evaluation
+
+5. **Process Control**
+   - Improved the PCB structure to track more process information
+   - Added better handling of process termination and blocking
+   - Implemented more realistic process scheduling decisions
+
+## Code Quality Improvements
+
+1. **Code Organization**
+   - Added function prototypes for better code structure
+   - Improved function organization for better readability
+   - Enhanced variable naming for clarity
+
+2. **Documentation**
+   - Added comprehensive comments explaining the scheduler algorithm
+   - Documented function purposes and parameters
+   - Added clear explanations of data structures and their usage
+
+3. **Error Prevention**
+   - Added initialization of variables to prevent undefined behavior
+   - Implemented more robust boundary checking
+   - Added defensive programming techniques to prevent crashes
+
+## Runtime Behavior Improvements
+
+1. **Process Variety**
+   - Enhanced the randomization of process behaviors for more realistic simulation
+   - Balanced the distribution of termination, blocking, and full quantum usage
+
+2. **Scheduler Performance**
+   - Improved the responsiveness of the scheduler to process state changes
+   - Enhanced the fairness of CPU allocation among processes
+   - Added better handling of edge cases (e.g., all queues empty)
+
+3. **Logging Enhancement**
+   - Added more detailed logging of scheduler decisions
+   - Implemented periodic queue state reporting
+   - Added final statistics collection and reporting
