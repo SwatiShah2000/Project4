@@ -1,14 +1,20 @@
 CC = gcc
 CFLAGS = -Wall -g
-OBJ = oss.o queue.o user.o
+OBJECTS = oss.o queue.o
 
 all: oss user
 
-oss: oss.c queue.o
-	$(CC) $(CFLAGS) -o oss oss.c queue.o
+oss: oss.o queue.o
+	$(CC) $(CFLAGS) -o oss oss.o queue.o
 
-user: user.c
-	$(CC) $(CFLAGS) -o user user.c
+user: user.o
+	$(CC) $(CFLAGS) -o user user.o
+
+oss.o: oss.c queue.h
+	$(CC) $(CFLAGS) -c oss.c
+
+user.o: user.c
+	$(CC) $(CFLAGS) -c user.c
 
 queue.o: queue.c queue.h
 	$(CC) $(CFLAGS) -c queue.c
